@@ -24,3 +24,7 @@
 (number) @number
 (boolean) @boolean
 (string) @string
+[
+   (paired_statement)
+   (unpared_statement)
+] @operator
