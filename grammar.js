@@ -72,6 +72,25 @@ module.exports = grammar({
 
     // Statements
     // unpaired type {% tag %}
+    unpaired_statement: $ => {
+      const tag_names = [
+          "translate",
+          "csrf_token",
+          "extend",
+          "include",
+          "firstoft",
+          "load",
+          "lorem",
+          "querystring",
+          "regroup",
+          "templatetag",
+          "url",
+          "get_static_prefix",
+          "get_media_prefix"
+      ];
+    return choice(...tag_names.map((tag_name) => seq(
+        "{%", alias(tag_name, $.tag_name), repeat($._attribute), "%}")));
+    },
     // paired type   {% tag %}..{% endtag %}
     _statement: $ => choice(
       $.paired_statement,
