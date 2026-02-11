@@ -86,7 +86,9 @@ module.exports = grammar({
         "autoescape",
         "block",
         "blocktranslate",
+        "filter",
         "ifchanged",
+        "partialdef",
         "spaceless",
         "verbatim",
         "with"
